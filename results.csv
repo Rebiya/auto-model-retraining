@@ -1,0 +1,3 @@
+model,train_accuracy,test_accuracy,loss,precision_score,recall_score,f1_score,roc_auc_score,confusion_matrix
+decision_tree,0.8084842030528931,0.7927608232789212,0.3890675355147533,0.6385135135135135,0.5053475935828877,0.564179104477612,0.8364023870417733,"[[928,107],
+[185,189]]"
