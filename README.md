@@ -180,6 +180,3 @@ data/customer_churn.csv
 * Figures are **timestamped + round-specific** → shows retraining effect
 * Models are **modular** → one file per model, scratch LR included
 * `results.csv` keeps metrics **centralized and reproducible**
-
-Perfect — let’s make this **crystal clear**, minimal, and competition-ready. I’ll draw a **flow diagram showing all files, folders, and how augmented data is handled**.
-
