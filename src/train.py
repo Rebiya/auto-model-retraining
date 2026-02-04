@@ -1,4 +1,5 @@
 # Purpose: Train all models on original preprocessed data
+# to run use: python src/train.py
 # =========================================
 
 import os
