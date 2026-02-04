@@ -36,7 +36,12 @@ def get_latest_combined_version(combined_dir="data/combined"):
     return max(versions) if versions else -1
 
 
-def main():
+def retrain_pipeline():
+    """
+    Full retraining pipeline:
+    augmentation → combine → train → evaluate → plots
+    """
+    print("🚀 Starting retraining pipeline")
     # ------------------------------
     # 1️⃣ Load original processed data for augmentation
     # ------------------------------
@@ -128,7 +133,7 @@ def main():
         print(metrics)
 
     print("\nRetraining completed successfully.")
+    print("✅ Retraining finished")
 
-
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     retrain_pipeline()

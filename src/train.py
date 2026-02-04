@@ -21,7 +21,11 @@ from models.logistic_regression_sklearn import LogisticRegressionModel
 from models.random_forest import RandomForestModel
 from models.svm import SVMModel
 
-def main():
+def initial_training():
+    """
+    Initial training on preprocessed data (run once)
+    """
+    print("🏁 Initial training started")
     # ------------------------------
     # 1️⃣ Load original preprocessed data
     # ------------------------------
@@ -73,7 +77,7 @@ def main():
         print(metrics)
 
     print("\nAll models trained and evaluated successfully.")
+    print("✅ Initial training completed")
 
-
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     initial_training()

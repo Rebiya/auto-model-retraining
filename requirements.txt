@@ -4,3 +4,5 @@ seaborn
 joblib 
 pandas 
 numpy 
+celery
+redis
