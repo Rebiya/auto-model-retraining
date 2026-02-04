@@ -74,16 +74,16 @@ class KNNModel:
         return metrics
 
 
-if __name__ == "__main__":
-    # Load processed data
-    X_train = pd.read_csv("data/preprocessed/X_train.csv")
-    y_train = pd.read_csv("data/preprocessed/y_train.csv").squeeze()
+# if __name__ == "__main__":
+#     # Load processed data
+#     X_train = pd.read_csv("data/preprocessed/X_train.csv")
+#     y_train = pd.read_csv("data/preprocessed/y_train.csv").squeeze()
 
-    X_test = pd.read_csv("data/preprocessed/X_test.csv")
-    y_test = pd.read_csv("data/preprocessed/y_test.csv").squeeze()
+#     X_test = pd.read_csv("data/preprocessed/X_test.csv")
+#     y_test = pd.read_csv("data/preprocessed/y_test.csv").squeeze()
 
-    knn_model = KNNModel(n_neighbors=55, weights="uniform", metric="manhattan", p=1)
-    knn_model.train(X_train, y_train)
-    metrics = knn_model.evaluate(X_test, y_test, model_name="knn")
-    print("KNN metrics:")
-    print(metrics)
+#     knn_model = KNNModel(n_neighbors=55, weights="uniform", metric="manhattan", p=1)
+#     knn_model.train(X_train, y_train)
+#     metrics = knn_model.evaluate(X_test, y_test, model_name="knn")
+#     print("KNN metrics:")
+#     print(metrics)

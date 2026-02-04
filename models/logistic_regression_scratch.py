@@ -168,45 +168,47 @@ class LogisticRegressionScratch:
         return (self.predict_proba(X) >= self.threshold).astype(int)
 
     # -----------------------
-    def evaluate(self, X_test, y_test):
+    def evaluate(self, X_test, y_test, model_name=None):
+        name = model_name or self.model_name
         y_pred = self.predict(X_test)
         y_proba = self.predict_proba(X_test)
-
+    
         metrics = evaluate_model(
             y_true=y_test,
             y_pred=y_pred,
             y_proba=y_proba,
-            model_name=self.model_name,
+            model_name=name,
             train_accuracy=self.train_accuracy,
             loss=self.loss
         )
-
-        plot_confusion_matrix(y_test, y_pred, model_name=self.model_name)
-        plot_roc_curve(y_test, y_proba, model_name=self.model_name)
-        plot_precision_recall_curve(y_test, y_proba, model_name=self.model_name)
-
+    
+        plot_confusion_matrix(y_test, y_pred, model_name=name)
+        plot_roc_curve(y_test, y_proba, model_name=name)
+        plot_precision_recall_curve(y_test, y_proba, model_name=name)
+    
         return metrics
 
 
-# -----------------------
-# Standalone run
-# -----------------------
-if __name__ == "__main__":
-    X_train = pd.read_csv("data/preprocessed/X_train.csv")
-    y_train = pd.read_csv("data/preprocessed/y_train.csv").squeeze()
-    X_test = pd.read_csv("data/preprocessed/X_test.csv")
-    y_test = pd.read_csv("data/preprocessed/y_test.csv").squeeze()
 
-    model = LogisticRegressionScratch(
-        lr=0.01,
-        epochs=3000,
-        batch_size=128,
-        l2_lambda=0.01,
-        pos_weight=2.5
-    )
+# # -----------------------
+# # Standalone run
+# # -----------------------
+# if __name__ == "__main__":
+#     X_train = pd.read_csv("data/preprocessed/X_train.csv")
+#     y_train = pd.read_csv("data/preprocessed/y_train.csv").squeeze()
+#     X_test = pd.read_csv("data/preprocessed/X_test.csv")
+#     y_test = pd.read_csv("data/preprocessed/y_test.csv").squeeze()
 
-    model.train(X_train, y_train)
-    metrics = model.evaluate(X_test, y_test)
+#     model = LogisticRegressionScratch(
+#         lr=0.01,
+#         epochs=3000,
+#         batch_size=128,
+#         l2_lambda=0.01,
+#         pos_weight=2.5
+#     )
 
-    print("Scratch Logistic Regression metrics:")
-    print(metrics)
+#     model.train(X_train, y_train)
+#     metrics = model.evaluate(X_test, y_test)
+
+#     print("Scratch Logistic Regression metrics:")
+#     print(metrics)

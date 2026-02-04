@@ -99,22 +99,22 @@ class SVMModel:
         self.model = joblib.load(path)
 
 
-# -------------------------------
-# Quick test / standalone usage
-# -------------------------------
-if __name__ == "__main__":
-    # Load preprocessed train/test
-    X_train = pd.read_csv("data/preprocessed/X_train.csv")
-    y_train = pd.read_csv("data/preprocessed/y_train.csv").squeeze()
-    X_test = pd.read_csv("data/preprocessed/X_test.csv")
-    y_test = pd.read_csv("data/preprocessed/y_test.csv").squeeze()
+# # -------------------------------
+# # Quick test / standalone usage
+# # -------------------------------
+# if __name__ == "__main__":
+#     # Load preprocessed train/test
+#     X_train = pd.read_csv("data/preprocessed/X_train.csv")
+#     y_train = pd.read_csv("data/preprocessed/y_train.csv").squeeze()
+#     X_test = pd.read_csv("data/preprocessed/X_test.csv")
+#     y_test = pd.read_csv("data/preprocessed/y_test.csv").squeeze()
 
-    svm_model = SVMModel(kernel="rbf", C=1.0, probability=True)
+#     svm_model = SVMModel(kernel="rbf", C=1.0, probability=True)
 
-    # Train
-    svm_model.train(X_train, y_train)
+#     # Train
+#     svm_model.train(X_train, y_train)
 
-    # Evaluate + save metrics + plots
-    metrics = svm_model.evaluate(X_test, y_test, model_name="svm")
-    print("SVM metrics:")
-    print(metrics)
+#     # Evaluate + save metrics + plots
+#     metrics = svm_model.evaluate(X_test, y_test, model_name="svm")
+#     print("SVM metrics:")
+#     print(metrics)

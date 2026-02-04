@@ -98,32 +98,32 @@ class RandomForestModel:
         """Load trained model."""
         self.model = joblib.load(path)
 
-# -------------------------------
-# Quick test / standalone usage
-# -------------------------------
-if __name__ == "__main__":
-    # Load preprocessed train/test
-    X_train = pd.read_csv("data/preprocessed/X_train.csv")
-    y_train = pd.read_csv("data/preprocessed/y_train.csv").squeeze()
-    X_test = pd.read_csv("data/preprocessed/X_test.csv")
-    y_test = pd.read_csv("data/preprocessed/y_test.csv").squeeze()
+# # -------------------------------
+# # Quick test / standalone usage
+# # -------------------------------
+# if __name__ == "__main__":
+#     # Load preprocessed train/test
+#     X_train = pd.read_csv("data/preprocessed/X_train.csv")
+#     y_train = pd.read_csv("data/preprocessed/y_train.csv").squeeze()
+#     X_test = pd.read_csv("data/preprocessed/X_test.csv")
+#     y_test = pd.read_csv("data/preprocessed/y_test.csv").squeeze()
 
-    # Initialize model with hyperparameters
-    rf_model = RandomForestModel(
-        n_estimators=300,
-        max_depth=8,
-        min_samples_split=10,
-        min_samples_leaf=4,
-        max_features="sqrt",
-        class_weight="balanced",
-        random_state=42,
-        n_jobs=-1
-    )
+#     # Initialize model with hyperparameters
+#     rf_model = RandomForestModel(
+#         n_estimators=300,
+#         max_depth=8,
+#         min_samples_split=10,
+#         min_samples_leaf=4,
+#         max_features="sqrt",
+#         class_weight="balanced",
+#         random_state=42,
+#         n_jobs=-1
+#     )
 
-    # Train
-    rf_model.train(X_train, y_train)
+#     # Train
+#     rf_model.train(X_train, y_train)
 
-    # Evaluate + save metrics + plots
-    metrics = rf_model.evaluate(X_test, y_test, model_name="random_forest")
-    print("Random Forest metrics:")
-    print(metrics)
+#     # Evaluate + save metrics + plots
+#     metrics = rf_model.evaluate(X_test, y_test, model_name="random_forest")
+#     print("Random Forest metrics:")
+#     print(metrics)

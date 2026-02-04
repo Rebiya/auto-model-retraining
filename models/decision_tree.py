@@ -98,20 +98,20 @@ class DecisionTreeModel:
 # -------------------------------
 # Quick test / standalone usage
 # -------------------------------
-if __name__ == "__main__":
-    # Load preprocessed train/test
-    X_train = pd.read_csv("data/preprocessed/X_train.csv")
-    y_train = pd.read_csv("data/preprocessed/y_train.csv").squeeze()
-    X_test = pd.read_csv("data/preprocessed/X_test.csv")
-    y_test = pd.read_csv("data/preprocessed/y_test.csv").squeeze()
+# if __name__ == "__main__":
+#     # Load preprocessed train/test
+#     X_train = pd.read_csv("data/preprocessed/X_train.csv")
+#     y_train = pd.read_csv("data/preprocessed/y_train.csv").squeeze()
+#     X_test = pd.read_csv("data/preprocessed/X_test.csv")
+#     y_test = pd.read_csv("data/preprocessed/y_test.csv").squeeze()
 
-    # Initialize model with hyperparameters
-    dt_model = DecisionTreeModel(max_depth=6, min_samples_split=10, min_samples_leaf=4, class_weight='balanced', random_state=42)
+#     # Initialize model with hyperparameters
+#     dt_model = DecisionTreeModel(max_depth=6, min_samples_split=10, min_samples_leaf=4, class_weight='balanced', random_state=42)
 
-    # Train
-    dt_model.train(X_train, y_train)
+#     # Train
+#     dt_model.train(X_train, y_train)
 
-    # Evaluate + save metrics + plots
-    metrics = dt_model.evaluate(X_test, y_test, model_name="decision_tree")
-    print("Decision Tree metrics:")
-    print(metrics)
+#     # Evaluate + save metrics + plots
+#     metrics = dt_model.evaluate(X_test, y_test, model_name="decision_tree")
+#     print("Decision Tree metrics:")
+#     print(metrics)
