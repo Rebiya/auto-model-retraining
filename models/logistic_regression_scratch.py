@@ -109,7 +109,7 @@ class LogisticRegressionScratch:
 
                 error = p - yb
                 error[yb == 1] *= self.pos_weight
-
+                # Compute gradients
                 dw = (xb.T @ error) / len(xb)
                 db = error.mean()
 

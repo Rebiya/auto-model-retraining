@@ -41,6 +41,7 @@ class DecisionTreeModel:
             max_depth=max_depth,
             min_samples_split=min_samples_split,
             min_samples_leaf=min_samples_leaf,
+            class_weight=class_weight,
             random_state=random_state
         )
         self.train_accuracy = None
